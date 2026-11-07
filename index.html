@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksan Effendi — e-CV & Web Portofolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#060913',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #060913;
+            color: #f8fafc;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.15);
+        }
+
+        .glow-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+        }
+
+        .pill-badge {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pill-badge:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            transform: translateY(-2px);
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-[#060913] text-slate-100 antialiased selection:bg-sky-500 selection:text-white glow-bg min-h-screen">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#hero"
+                class="font-bold text-lg tracking-tight bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                Iksan Effendi
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-sky-400 transition">Tentang</a>
+                <a href="#skills" class="hover:text-sky-400 transition">Skills & Tools</a>
+                <a href="#projects" class="hover:text-sky-400 transition">Proyek</a>
+                <a href="#certifications" class="hover:text-sky-400 transition">Sertifikasi</a>
+                <a href="#education" class="hover:text-sky-400 transition">Pendidikan</a>
+                <a href="#contact" class="hover:text-sky-400 transition">Kontak</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact"
+                    class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg text-xs font-semibold bg-sky-600 hover:bg-sky-500 text-white transition shadow-lg shadow-sky-600/30">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> Hubungi Saya
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-sky-400 transition py-1">Tentang</a>
+            <a href="#skills" class="block text-slate-300 hover:text-sky-400 transition py-1">Skills & Tools</a>
+            <a href="#projects" class="block text-slate-300 hover:text-sky-400 transition py-1">Proyek</a>
+            <a href="#certifications" class="block text-slate-300 hover:text-sky-400 transition py-1">Sertifikasi</a>
+            <a href="#education" class="block text-slate-300 hover:text-sky-400 transition py-1">Pendidikan</a>
+            <a href="#contact" class="block text-slate-300 hover:text-sky-400 transition py-1">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen pt-28 pb-16 flex items-center relative overflow-hidden">
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="md:col-span-7 space-y-6">
+                <div
+                    class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-sky-300 text-xs font-medium shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Mahasiswa Sistem Informasi • Digital Projects</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Halo, Saya <span
+                        class="bg-gradient-to-r from-sky-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">Iksan
+                        Effendi</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl font-medium text-slate-300">
+                    Mahasiswa Sistem Informasi • UBSI Solo
+                </p>
+
+                <p class="text-slate-400 text-base max-w-xl leading-relaxed">
+                    Mahasiswa Sistem Informasi yang tertarik pada pengembangan aplikasi, analisis sistem, pengelolaan
+                    basis data, dan solusi digital berkualitas tinggi.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#projects"
+                        class="px-6 py-3 rounded-xl font-semibold bg-sky-600 hover:bg-sky-500 text-white transition shadow-lg shadow-sky-600/25 flex items-center space-x-2">
+                        <span>Jelajahi Proyek</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-3 rounded-xl font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-xs text-sky-400"></i>
+                        <span>Hubungi Saya</span>
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-5 pt-4 text-slate-400">
+                    <a href="https://instagram.com/iksanefendii" target="_blank"
+                        class="hover:text-sky-400 transition text-xl" title="Instagram @iksanefendii"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:iksanefendi16@gmail.com" class="hover:text-sky-400 transition text-xl"
+                        title="Email iksanefendi16@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    <span class="text-xs text-slate-500 border-l border-slate-800 pl-4">Karanganyar, Jawa Tengah</span>
+                </div>
+            </div>
+
+            <!-- Avatar Card -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500">
+                    </div>
+                    <div class="relative glass-card p-5 rounded-2xl w-72 sm:w-80 text-center space-y-4">
+                        <div
+                            class="relative w-full h-80 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center">
+                            <img src="Kuliah Formal.png" alt="Iksan Effendi" class="w-full h-full object-cover">
+                            <div
+                                class="absolute bottom-3 left-3 right-3 bg-slate-950/85 backdrop-blur-md py-2.5 px-3.5 rounded-lg border border-slate-800 text-left">
+                                <p class="text-xs font-bold text-white">Iksan Effendi</p>
+                                <p class="text-[10px] text-sky-300">UBSI Solo • Sistem Informasi</p>
+                            </div>
+                        </div>
+                        <div class="text-left px-1 space-y-1">
+                            <p class="text-xs font-semibold text-slate-300 flex items-center"><i
+                                    class="fa-solid fa-location-dot text-sky-400 mr-2"></i> Karanganyar, Jawa Tengah</p>
+                            <p class="text-xs font-semibold text-slate-300 flex items-center"><i
+                                    class="fa-solid fa-envelope text-teal-400 mr-2"></i> iksanefendi16@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 relative border-t border-slate-900 bg-slate-950/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Profil Singkat</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Tentang Saya</h2>
+                <p class="text-slate-400">Fokus pada pemecahan masalah, analisis sistem, dan pengembangan solusi
+                    digital.</p>
+            </div>
+
+            <div class="glass-card p-8 sm:p-10 rounded-2xl max-w-4xl mx-auto space-y-6 shadow-xl">
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                    Mahasiswa Sistem Informasi yang tertarik pada pengembangan aplikasi, analisis sistem, pengelolaan
+                    basis data, dan solusi digital. Memiliki pengalaman melalui proyek akademik berbasis web dan mobile,
+                    termasuk penyusunan dokumentasi, perancangan sistem, serta pengujian fungsional.
+                </p>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                    Terbiasa memanfaatkan alat bantu digital dan AI dalam proses pengembangan, dengan fokus pada
+                    pemecahan masalah, pembelajaran berkelanjutan, dan peningkatan kualitas produk.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-800">
+                    <div class="space-y-1">
+                        <span class="text-xs text-sky-400 font-semibold uppercase">Domisili</span>
+                        <p class="text-sm font-medium text-white">Karanganyar, Jawa Tengah</p>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-teal-400 font-semibold uppercase">Pendidikan</span>
+                        <p class="text-sm font-medium text-white">UBSI Solo (Sistem Informasi)</p>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xs text-indigo-400 font-semibold uppercase">Fokus Utama</span>
+                        <p class="text-sm font-medium text-white">Digital Projects & Systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools Section -->
+    <section id="skills" class="py-24 relative border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">01 / TOOLKIT</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Tools.</h2>
+                <p class="text-slate-400">Teknologi dan keterampilan yang saya gunakan serta terus kembangkan.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3.5 max-w-4xl mx-auto">
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">PHP</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">JavaScript</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Dart</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Laravel</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">PostgreSQL / Supabase
+                </div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">SQL Database</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Analisis & Perancangan
+                    Sistem (UML)</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Black Box Testing</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Software Quality Assurance
+                </div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Microsoft Word</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Microsoft Excel</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Microsoft PowerPoint</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Problem Solving</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Teamwork</div>
+                <div class="pill-badge px-5 py-3 rounded-xl text-sm font-medium text-sky-300">Communication</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 relative border-t border-slate-900 bg-slate-950/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">02 / PORTFOLIO</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Proyek Pilihan.</h2>
+                <p class="text-slate-400">Sistem informasi desa, habit tracker mobile app, dan platform informasi
+                    pendakian.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1: SIDESA -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition duration-300 group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20">Web
+                                Application</span>
+                            <i class="fa-solid fa-medal text-amber-400 text-lg" title="Medali Perunggu UMB"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition">SIDESA — Sistem
+                            Informasi Desa</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Sistem layanan desa berbasis web untuk mendukung pengajuan surat, pengaduan masyarakat,
+                            informasi desa, dan pengajuan bantuan sosial.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">Laravel</span>
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <button onclick="openModal('sidesa')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center space-x-1 cursor-pointer">
+                            <span>Detail Proyek</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                        <span class="text-xs text-amber-400 font-medium"><i class="fa-solid fa-award mr-1"></i> Perunggu
+                            UMB</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: StreakUp -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition duration-300 group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Mobile
+                                Application</span>
+                            <i class="fa-solid fa-fire text-indigo-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition">StreakUp — Habit
+                            Tracker</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Konsep aplikasi pencatat kebiasaan dengan fitur streak, XP, level, pencapaian, statistik
+                            aktivitas, dan pengingat harian.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">Dart
+                                / Flutter</span>
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">Supabase</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <button onclick="openModal('streakup')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center space-x-1 cursor-pointer">
+                            <span>Detail Proyek</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                        <span class="text-xs text-slate-400 font-medium">Habit & Gamification</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: CariYo! Track -->
+                <div
+                    class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between transition duration-300 group">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/20">Web
+                                Application</span>
+                            <i class="fa-solid fa-mountain text-teal-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition">CariYo! Track —
+                            Info Pendakian</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Website pendukung pendakian yang memuat informasi gunung, jalur, estimasi waktu, cuaca,
+                            keselamatan, serta kebutuhan pendakian.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">JavaScript</span>
+                            <span
+                                class="text-[11px] px-2.5 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <button onclick="openModal('cariyotracking')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center space-x-1 cursor-pointer">
+                            <span>Detail Proyek</span>
+                            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </button>
+                        <span class="text-xs text-teal-400 font-medium"><i class="fa-solid fa-microphone mr-1"></i>
+                            Seminar Nasional</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards Section -->
+    <section id="certifications" class="py-24 relative border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">03 / AWARDS & CERTIFICATES</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Sertifikasi & Pencapaian.</h2>
+                <p class="text-slate-400">Penghargaan inovasi nasional, seminar nasional, dan sertifikasi kompetensi
+                    resmi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cert 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4 transition duration-300">
+                    <div class="space-y-3">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-xl">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <span
+                            class="text-[11px] font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20">28-29
+                            Juli 2026</span>
+                        <h3 class="text-lg font-bold text-white">Medali Perunggu — Pekan Inovasi Nasional vol. 3</h3>
+                        <p class="text-xs font-medium text-teal-300">Universitas Mercu Buana Jakarta</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Penghargaan resmi atas pengembangan proyek <strong class="text-slate-200">SIDESA (Sistem
+                                Informasi Desa)</strong>.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">No: 01/114-308/F-Sert/VII/2026</span>
+                        <button onclick="openCertModal('mercubuana')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 cursor-pointer">Lihat
+                            Detail</button>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4 transition duration-300">
+                    <div class="space-y-3">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-sky-500/20 border border-sky-500/40 flex items-center justify-center text-sky-400 text-xl">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <span
+                            class="text-[11px] font-semibold px-2.5 py-1 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20">9
+                            April 2026</span>
+                        <h3 class="text-lg font-bold text-white">Pemakalah — Seminar Nasional Inovatif 2026</h3>
+                        <p class="text-xs font-medium text-teal-300">BSI Convention Center UBSI Kaliabang</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Presentasi karya ilmiah <em class="text-slate-300">"Transformasi Digital Berkelanjutan
+                                Melalui Inovasi Generatif dan Ekosistem Cerdas"</em>.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">No: INO-26-0301</span>
+                        <button onclick="openCertModal('seminar')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 cursor-pointer">Lihat
+                            Detail</button>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between space-y-4 transition duration-300">
+                    <div class="space-y-3">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 text-xl">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span
+                            class="text-[11px] font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Sertifikat
+                            Resmi</span>
+                        <h3 class="text-lg font-bold text-white">Sertifikat Kompetensi Software Quality Assurance (SQA)
+                        </h3>
+                        <p class="text-xs font-medium text-teal-300">PT. Tanjung Mulia Informatika</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Lulus ujian kompetensi pengujian perangkat lunak dengan predikat <strong
+                                class="text-slate-200">PEMULA - SANGAT BAIK</strong>.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-xs text-slate-500">Direktur: Lukman Septiadi</span>
+                        <button onclick="openCertModal('sqa')"
+                            class="text-xs font-semibold text-sky-400 hover:text-sky-300 cursor-pointer">Lihat
+                            Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline Section -->
+    <section id="education" class="py-24 relative border-t border-slate-900 bg-slate-950/40">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400">04 / TIMELINE</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Riwayat Pendidikan.</h2>
+                <p class="text-slate-400">Jejak akademik lengkap dari tingkat dasar hingga perguruan tinggi.</p>
+            </div>
+
+            <div
+                class="space-y-8 relative before:absolute before:inset-0 before:left-7 before:w-0.5 before:bg-slate-800">
+                <!-- UBSI Solo -->
+                <div class="relative flex items-start space-x-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-sky-600/20 border border-sky-500/40 flex items-center justify-center text-sky-400 shrink-0 z-10 shadow-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex-1 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h3 class="text-lg font-bold text-white">Universitas Bina Sarana Informatika (UBSI) Solo
+                            </h3>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded bg-sky-500/10 text-sky-300 w-fit">2024
+                                – Sekarang (Semester 5)</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-300">Sistem Informasi (S1)</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Mempelajari analisis dan perancangan sistem, manajemen basis data, pemrograman web & mobile,
+                            serta aktif dalam kompetisi inovasi teknologi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SMK Bina Taruna Masaran -->
+                <div class="relative flex items-start space-x-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 shrink-0 z-10 shadow-lg">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex-1 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h3 class="text-lg font-bold text-white">SMK Bina Taruna Masaran</h3>
+                            <span
+                                class="text-xs font-medium px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-300 w-fit">2021
+                                – 2024</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-300">Teknik Komputer dan Jaringan (TKJ)</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Mempelajari konfigurasi jaringan komputer, perangkat keras, administrasi sistem, dan
+                            pemecahan masalah infrastruktur IT.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SMPN 2 Kebakkramat -->
+                <div class="relative flex items-start space-x-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-teal-600/20 border border-teal-500/40 flex items-center justify-center text-teal-400 shrink-0 z-10 shadow-lg">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex-1 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h3 class="text-lg font-bold text-white">SMPN 2 Kebakkramat</h3>
+                            <span
+                                class="text-xs font-medium px-2.5 py-1 rounded bg-teal-500/10 text-teal-300 w-fit">2018
+                                – 2021</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-300">Sekolah Menengah Pertama</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Pendidikan menengah pertama dengan fokus pada pengembangan akademik dan kedisiplinan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SDN 1 Waru -->
+                <div class="relative flex items-start space-x-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-400 shrink-0 z-10 shadow-lg">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex-1 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h3 class="text-lg font-bold text-white">SDN 1 Waru</h3>
+                            <span
+                                class="text-xs font-medium px-2.5 py-1 rounded bg-purple-500/10 text-purple-300 w-fit">2012
+                                – 2018</span>
+                        </div>
+                        <p class="text-sm font-medium text-purple-300">Sekolah Dasar</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Pendidikan dasar fondasi literasi, numerasi, dan pembentukan karakter.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TK Pertiwi Waru -->
+                <div class="relative flex items-start space-x-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-pink-600/20 border border-pink-500/40 flex items-center justify-center text-pink-400 shrink-0 z-10 shadow-lg">
+                        <i class="fa-solid fa-shapes"></i>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl flex-1 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <h3 class="text-lg font-bold text-white">TK Pertiwi Waru</h3>
+                            <span
+                                class="text-xs font-medium px-2.5 py-1 rounded bg-pink-500/10 text-pink-300 w-fit">2011
+                                – 2012</span>
+                        </div>
+                        <p class="text-sm font-medium text-pink-300">Taman Kanak-Kanak</p>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Pendidikan anak usia dini awal dalam pengenalan sosialisasi dan kreativitas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section & Footer -->
+    <section id="contact" class="py-24 relative border-t border-slate-900 bg-[#04060c]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-400">05 / GET IN TOUCH</span>
+                    <h2 class="text-3xl font-extrabold text-white">Mari Berdiskusi & Berkolaborasi.</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Punya pertanyaan, tawaran proyek, atau ingin berdiskusi seputar sistem informasi dan
+                        pengembangan digital? Kirimkan pesan melalui formulir atau kontak di bawah ini.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center space-x-4 text-slate-300">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-sky-600/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Utama</p>
+                                <p class="text-sm font-semibold text-white">iksanefendi16@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 text-slate-300">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-pink-600/10 border border-pink-500/30 flex items-center justify-center text-pink-400">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Instagram</p>
+                                <a href="https://instagram.com/iksanefendii" target="_blank" rel="noopener noreferrer"
+                                    class="text-sm font-semibold text-sky-400 hover:underline">@iksanefendii</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 text-slate-300">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-indigo-600/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Lokasi</p>
+                                <p class="text-sm font-semibold text-white">Karanganyar, Jawa Tengah, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-8 rounded-2xl relative shadow-xl">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Nama Lengkap</label>
+                            <input type="text" required
+                                class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition"
+                                placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Alamat Email</label>
+                            <input type="email" required
+                                class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition"
+                                placeholder="nama@domain.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Pesan / Keperluan</label>
+                            <textarea rows="4" required
+                                class="w-full bg-slate-900 border border-slate-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition"
+                                placeholder="Tuliskan pesan atau penawaran..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-3 rounded-lg font-semibold bg-sky-600 hover:bg-sky-500 text-white transition shadow-lg shadow-sky-600/30 flex items-center justify-center space-x-2 cursor-pointer">
+                            <span>Kirim Pesan</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                    <!-- Success Toast Message Box -->
+                    <div id="toast-msg"
+                        class="hidden absolute inset-0 bg-slate-950/95 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center p-6 text-center space-y-3">
+                        <div
+                            class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Pesan Berhasil Terkirim!</h4>
+                        <p class="text-xs text-slate-400">Terima kasih telah menghubungi. Pesan simulasi Anda telah
+                            diterima oleh sistem.</p>
+                        <button onclick="closeToast()"
+                            class="px-4 py-2 bg-sky-600 text-xs font-semibold rounded-lg text-white hover:bg-sky-500 transition cursor-pointer">Kirim
+                            Pesan Lain</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div
+                class="mt-20 pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Iksan Effendi. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#hero" class="hover:text-slate-400 transition">Kembali ke Atas ↑</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div
+            class="glass-card max-w-lg w-full p-6 sm:p-8 rounded-2xl relative space-y-5 border border-slate-700 shadow-2xl">
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 cursor-pointer" title="Tutup">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content" class="space-y-4">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="flex justify-end pt-2">
+                <button onclick="closeModal()"
+                    class="px-5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white transition cursor-pointer">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certification Detail Modal -->
+    <div id="cert-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div
+            class="glass-card max-w-lg w-full p-6 sm:p-8 rounded-2xl relative space-y-5 border border-slate-700 shadow-2xl">
+            <button onclick="closeCertModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 cursor-pointer" title="Tutup">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="cert-modal-content" class="space-y-4">
+                <!-- Dynamically populated -->
+            </div>
+            <div class="flex justify-end pt-2">
+                <button onclick="closeCertModal()"
+                    class="px-5 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white transition cursor-pointer">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project details data
+        const projectData = {
+            sidesa: {
+                title: "SIDESA — Sistem Informasi Desa",
+                category: "Web-based Information System",
+                desc: "Sistem layanan desa berbasis web untuk mendukung pengajuan surat, pengaduan masyarakat, informasi desa, dan pengajuan bantuan sosial. Peraih Medali Perunggu Pekan Inovasi Nasional vol. 3 Universitas Mercu Buana 2026.",
+                tech: ["Laravel", "PHP", "MySQL", "System Analysis & Design"]
+            },
+            streakup: {
+                title: "StreakUp — Habit Tracker",
+                category: "Mobile Application",
+                desc: "Konsep aplikasi pencatat kebiasaan dengan fitur streak, XP, level, pencapaian, statistik aktivitas, dan pengingat harian untuk meningkatkan produktivitas.",
+                tech: ["Dart / Flutter", "Supabase", "Gamification UI/UX"]
+            },
+            cariyotracking: {
+                title: "CariYo! Track — Platform Informasi Pendakian",
+                category: "Web Application & Seminar Nasional",
+                desc: "Website pendukung pendakian yang memuat informasi gunung, jalur pendakian, estimasi waktu, cuaca, keselamatan, serta perlengkapan pendakian. Dipresentasikan di Seminar Nasional Inovatif 2026.",
+                tech: ["JavaScript", "PostgreSQL", "Research & Publication"]
+            }
+        };
+
+        // Certification data
+        const certData = {
+            mercubuana: {
+                title: "Medali Perunggu — Pekan Inovasi Nasional vol. 3",
+                issuer: "Universitas Mercu Buana Jakarta",
+                date: "28-29 Juli 2026",
+                desc: "Diberikan kepada Iksan Effendi sebagai Peraih Medali Perunggu dalam acara Pekan Inovasi Nasional vol. 3 Universitas Mercu Buana atas inovasi proyek SIDESA.",
+                certNo: "01/114-308/F-Sert/VII/2026"
+            },
+            seminar: {
+                title: "Pemakalah — Seminar Nasional Inovatif 2026",
+                issuer: "UBSI (BSI Convention Center Kaliabang)",
+                date: "9 April 2026",
+                desc: "Diberikan kepada Iksan Effendi sebagai Pemakalah pada Seminar Nasional Inovatif 2026 dengan tema \"Transformasi Digital Berkelanjutan Melalui Inovasi Generatif dan Ekosistem Cerdas\".",
+                certNo: "INO-26-0301"
+            },
+            sqa: {
+                title: "Sertifikat Kompetensi Software Quality Assurance (SQA)",
+                issuer: "PT. Tanjung Mulia Informatika",
+                date: "Ujian Kompetensi Resmi",
+                desc: "Berhasil menyelesaikan ujian kompetensi pengujian perangkat lunak (Software Quality Assurance) dengan predikat dan kualifikasi PEMULA - SANGAT BAIK di bawah direktur Lukman Septiadi, S.Kom, M.Kom.",
+                certNo: "Sertifikasi Resmi TMI"
+            }
+        };
+
+        function openModal(projectId) {
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            const data = projectData[projectId];
+
+            if (data) {
+                content.innerHTML = `
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">${data.category}</span>
+                    <h3 class="text-2xl font-bold text-white">${data.title}</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed">${data.desc}</p>
+                    <div class="space-y-2 pt-2">
+                        <p class="text-xs font-semibold text-slate-400 uppercase">Teknologi / Fokus:</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${data.tech.map(t => `<span class="px-2.5 py-1 rounded bg-slate-900 text-xs text-sky-300 border border-slate-800">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.remove('flex');
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        function openCertModal(certId) {
+            const modal = document.getElementById('cert-modal');
+            const content = document.getElementById('cert-modal-content');
+            const data = certData[certId];
+
+            if (data) {
+                content.innerHTML = `
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">${data.date}</span>
+                    <h3 class="text-xl font-bold text-white">${data.title}</h3>
+                    <p class="text-xs font-medium text-teal-300">${data.issuer}</p>
+                    <p class="text-sm text-slate-300 leading-relaxed">${data.desc}</p>
+                    <div class="pt-2 border-t border-slate-800">
+                        <p class="text-[11px] text-slate-400 font-mono">Nomor Dokumen: ${data.certNo}</p>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeCertModal() {
+            document.getElementById('cert-modal').classList.remove('flex');
+            document.getElementById('cert-modal').classList.add('hidden');
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('project-modal')) closeModal();
+            if (e.target === document.getElementById('cert-modal')) closeCertModal();
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('toast-msg').classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+        }
+
+        function closeToast() {
+            document.getElementById('toast-msg').classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
